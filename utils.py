@@ -3,7 +3,6 @@ import torch
 from eval_func.bleu.bleu import Bleu
 from eval_func.rouge.rouge import Rouge
 from eval_func.cider.cider import Cider
-from eval_func.meteor.meteor import Meteor
 
 
 
@@ -61,7 +60,6 @@ def accuracy(scores, targets, k):
 def get_eval_score(references, hypotheses):
     scorers = [
         (Bleu(4), ["Bleu_1", "Bleu_2", "Bleu_3", "Bleu_4"]),
-        (Meteor(), "METEOR"),
         (Rouge(), "ROUGE_L"),
         (Cider(), "CIDEr")
     ]
